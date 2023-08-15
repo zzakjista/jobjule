@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link href="{{url_for('static', path='css/list.css')}}" rel="stylesheet">
+   <link type="text/css" href="{{url_for('static', path='css/bootstrap.min.css')}}" rel="stylesheet">
+   <script src="{{url_for('static', path='js/list.js')}}"></script>
+   <meta charset="UTF-8">
+   <title>Worknet Recommender System</title>
+</head>
+<body>
+<section class="list">
+   <div class="container">
+      <h2>Job Discription List</h2>
+      <h1>고용아 잡(Job)줄래 서비스 페이지입니다</h1>
+   </div>  
+</section>
+
+<section class="content">
+<div class="container my-3">
+   <table class="table">
+       <thead>
+       <tr class="table-dark">
+           <th>구인인증번호</th>
+           <th>회사명</th>
+           <th>채용제목</th>
+           <th>근무지역</th>
+           <th>급여</th>
+       </tr>
+       {% for i in list %}
+       <tr>
+          <td><a href="/detail?id={{i.구인인증번호}}">{{i.구인인증번호}}</a></td>
+          <td>{{i.회사명}}</td>
+          <td>{{i.구인제목}}</td>
+          <td>{{i.근무지역}}</td>
+          <td>{{i.최소임금액}}원</td>
+       </tr>
+       {% endfor %}
+</div>
+<div class="Refresh">
+   <button type="button" onclick="WindowRefresh()">새로고침</button>
+</div> 
+</section>
+<section>
+<!--페이지 이동 기능-->
+<div class="pagination">
+   <button type="button" onclick="location.href='/home?page={{page-1}}'">이전</button>
+   <input size="30" type="text" id="page" name="page" placeholder="이동할 페이지를 입력하세요">
+   <button type="button" onclick="location.href='/home?page='+document.getElementById('page').value">이동</button>
+   <button type="button" onclick="location.href='/home?page={{page+1}}'">다음</button>
+</div>
+</section>
+</body>
+</html>

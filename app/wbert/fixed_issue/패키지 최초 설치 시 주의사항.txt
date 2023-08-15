@@ -1,0 +1,9 @@
+■ gluonnlp.BERTTransform 오류 리포트
+-패키지 최초 설치 시 dataloader>bert>BERTDataset>nlp.data.BERTSentenceTransform에서 
+TypeError: BERTSentenceTransform.__init__() got an unexpected keyword argument 'vocab' 에러가 발생합니다.
+
+-사유는 KoBERT 모델이 AWS 클라우드 서버에서 HuggingFace로 모델을 이전하는 과정에서 생긴 코드의 변경 때문입니다.
+
+-따라서 해당 폴더의 transforms.py를 아래의 경로에 설치된 전체의 본문을 교체해주어야합니다.
+
+경로 : {파이썬 설치 패키지경로}/gluonnlp.data.transforms.py

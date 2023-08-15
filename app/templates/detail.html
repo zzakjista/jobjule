@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link href="{{url_for('static', path='css/list.css')}}" rel="stylesheet">
+   <link type="text/css" href="{{url_for('static', path='css/bootstrap.min.css')}}" rel="stylesheet">
+   <script src="{{url_for('static', path='js/list.js')}}"></script>
+   <meta charset="UTF-8">
+   <title>Worknet Recommender System</title>
+</head>
+<body>
+<section class="container">
+    <div class="container my-3">
+       <h1>{{data[id][0].구인제목}}</h1>
+    </div>
+
+    <div class="content">
+        <p>
+            <span style="font-weight:bold;">회사명:</span>
+            <span>{{data[id][0].회사명}}</span>
+
+        </p>
+        <p>
+            <span style="font-weight:bold;">근무지역:</span>
+            <span>{{data[id][0].근무지역}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">급여:</span>
+            <span>{{data[id][0].최소임금액}}</span>
+        </p>
+
+        <p>
+            <span style="font-weight:bold;">학력:</span>
+            <span>{{data[id][0].학력}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">경력:</span>
+            <span>{{data[id][0].경력}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">관련직종:</span>
+            <span>{{data[id][0].관련직종}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">직무내용:</span>
+            <span>{{data[id][0].직무내용}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">전공:</span>
+            <span>{{data[id][0].전공}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">자격면허:</span>
+            <span>{{data[id][0].자격면허}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">컴활능력:</span>
+            <span>{{data[id][0].컴활능력}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">우대조건:</span>
+            <span>{{data[id][0].우대조건}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">기타우대조건:</span>
+            <span>{{data[id][0].기타우대조건}}</span>
+        </p>
+        <p>
+            <span style="font-weight:bold;">기타안내:</span>
+            <span>{{data[id][0].기타안내}}</span>
+    </div>
+</section>
+
+<div class="container my-3" style="position : relative; top :0% ">
+    <table class="table">
+        <caption style="font-weight: bold" align="top"> 비슷한 채용공고도 둘러보세요!</caption>
+        <thead>
+        <tr class="table-dark">
+            <th>구인인증번호</th>
+            <th>구인제목</th>
+            <th>근무지역</th>
+            <th>경력</th>
+            <th>학력</th>
+        </tr>
+        </thead>
+        {% for key in recommendation_result[1:10] %}
+        <tr>
+            <td><a href="/detail?id={{data[key][0].구인인증번호}}">{{data[key][0].구인인증번호}}</a></td>
+            <td>{{data[key][0].구인제목}}</td>
+            <td>{{data[key][0].근무지역}}</td>
+            <td>{{data[key][0].경력}}</td>
+            <td>{{data[key][0].학력}}</td>
+        </tr>
+        {% endfor %}
+
+        <button style="position: absolute; bottom :-10%;" onclick="location.href='/home'" >목록</button>
+        
+</div>
+
+
+
+</body>
+ 
+</html>

@@ -1,0 +1,28 @@
+
+
+.list{
+    background-color: black;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    font-size: larger;
+    color : white;
+}
+
+.list_intro_right{
+    color : white;
+}
+
+.content_title{
+    padding-top : 5px;
+    padding-bottom : 5px;
+    font-size: larger;
+    color : green;
+    font-style: italic;
+}
+.content_list{
+    padding-top : 10px;
+    padding-bottom : 10px;
+    font-size: larger;
+    color : black;
+    font-style: italic;
+}
