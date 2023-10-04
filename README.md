@@ -19,3 +19,19 @@
 ## Caution
 - data>raw_data>당일 날짜 폴더에 채용목록.csv 와 채용상세.csv 파일이 존재해야합니다
 - 만약 API_KEY가 없을 시 샘플 데이터를 사용해보세요
+
+## Contents
+- 프로젝트의 결과물을 볼 수 있습니다
+<p align="center">
+  ![image](https://github.com/zzakjista/jobjule/assets/102800414/5fdb62eb-f2af-4c90-9a96-e9206e875ce0)
+  ![image](https://github.com/zzakjista/jobjule/assets/102800414/b8f72fb7-7ddf-4b41-9469-8c75c70d6713)
+  ![image](https://github.com/zzakjista/jobjule/assets/102800414/8a26a1ac-96a4-463e-ad39-5faed560245a)
+  <figcaption align="center">발표자료 샘플</figcaption>
+</p>
+
+
+## Tistory
+[프로젝트 리뷰 : ch.1 발단과 발상] (https://zzz0101.tistory.com/54)
+[프로젝트 리뷰 : ch.2 MVP정의와 아이디어] (https://zzz0101.tistory.com/56)
+[프로젝트 리뷰 : ch.3 제품 개발 기획] (https://zzz0101.tistory.com/56)
+... 연재 중 
